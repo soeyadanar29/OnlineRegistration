@@ -55,13 +55,32 @@ class StaffController extends Controller
         return view('staff.notice');
       }
       public function storeNotice(Request $request){
-        $formData=$request->validate([
-                    'title' => ["required"],
+        $request->validate([
+                    'no' => ["required"],
+                    'date' => ["required"],
                     'notice' => ["required"],
+                    'body' => ["required"],
+                    'name' => ["required"],
+                    'sign' => ["required"],
         ]);
-        Notice::create($formData);
-        
-        return view('staff.notice');
+       $notice=new Notice();
+       $notice->no = $request->no;
+       $notice->date = $request->date;
+       $notice->notice = $request->notice;
+       $notice->body= $request->body;
+       $notice->name = $request->name;
+       $notice->sign = $request->sign;
+       $notice->save();
+       
+        return redirect('/staff/notice')->with('success', 'Notice announce successful!');
+      }
+      public function enroll(){
+        return view('staff.enrollStudents');
+      }
+      public function firstYear() {
+        return view('staff.firstYearStudent',[
+            
+        ]);
       }
 
 }

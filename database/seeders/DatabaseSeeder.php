@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Year;
+use App\Models\Nation;
 use App\Models\Subject;
 use App\Models\learningSubject;
 use Illuminate\Database\Seeder;
@@ -25,6 +26,7 @@ class DatabaseSeeder extends Seeder
         Year::truncate();
         Subject::truncate();
         User::truncate();
+        Nation::truncate();
        
         Year::create([
             'year'=>'First Year',
@@ -62,6 +64,12 @@ class DatabaseSeeder extends Seeder
            'name'=>'staff',
            'password'=>'staff'
         ]);
+        Nation::create([
+            'type'=>'nation',
+         ]);
+         Nation::create([
+            'type'=>'foreign',
+         ]);
        
     }
 }

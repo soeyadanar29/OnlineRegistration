@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Year;
+use App\Models\Notice;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use App\Models\learningSubject;
@@ -41,6 +42,16 @@ class StudentController extends Controller
             'student'=>Student::select()->get(),
             'years'=>Year::select()->get(),
         ]);
+    }
+    public function viewNotice(){
+        return view('student.notice',[
+            'notices'=>Notice::latest()->paginate(2)
+        ]);
+    }
+    public function viewNoticePost(Notice $notice) {
+            return view('student.notice-view', [
+                'notice' => $notice,
+            ]);
     }
 }
 

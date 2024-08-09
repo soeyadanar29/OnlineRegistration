@@ -16,8 +16,10 @@
       <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav" style="background-color: #90E0EF;">
         <div class="container px-2 px-lg-5">
              <img src="/img/logo_processed.jpg" alt="logo" style="width:50px;height:50px;" class="float-start">
-             <span class="fs-4 text-secondary">
+             <span class="fs-4 ">
+              <a href="/" class="text-decoration-none text-secondary">
               𝒰𝒞𝒮𝒫𝒴𝒜𝒴
+            </a>
              </span>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -44,8 +46,8 @@
                       <p class="text-white h4 mb-5">
                         <img src="img/tagline.png" alt="" style="width:40px;height:40px">ပညာဝေဆာ သီရိခေတ္တရာ
                         <img src="img/tagline.png" alt="" style="width:40px;height:40px"></p>
-                      <a class="btn btn-primary btn-xl" href="/register">Register</a>
-                      <a class="btn btn-primary btn-xl" href="/login">Get Started</a>
+                      <a class="btn btn-primary btn-xl" href="/register">ကျောင်းအပ်ရန်</a>
+                      <a class="btn btn-primary btn-xl" href="/login">ဆောင်ရွက်ရန်</a>
                   </div>
               </div>
           </div>
@@ -91,15 +93,31 @@
   <footer class="bg-secondary" id="contactUs">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-md-8">
-           <h4 class="pe-5">
-            <img src="img/mortarboard.png" alt="" style="width:40px;height:40px" class="pe-2">Our Rector -	Dr. Yuzana</h4>
-           <h4>
-            <img src="img/settings.png" alt="" style="width:40px;height:40px" class="pe-2">Location -	Pyay, Bago Region, Myanmar</h4>
-            <h4>
-              <img src="img/www.png" alt="" style="width:40px;height:40px" class="pe-2">Website - 
-              <a href="https://lms.ucspyay.edu.mm" class="text-white">lms.ucspyay.edu</a></h4>
+        <div class="col-md-6 pt-2">
+          <h3>ဆက်သွယ်နိုင်မည့် ဖုန်းများ</h3>
+           <h5 class="pe-5">
+            <img src="img/phone-call.png" alt="" style="width:30px;height:30px" class="pe-2">စီမံဌာန -	၀၉-၈၉၄၄၈၃၃၀၀
+          </h5>
+          <h5 class="pe-5">
+            <img src="img/phone-call.png" alt="" style="width:30px;height:30px" class="pe-2">ငွေစာရင်း ဌာန - ၀၅၃-၂၈၅၂၂
+          </h5>
+          <h5 class="pe-5">
+            <img src="img/phone-call.png" alt="" style="width:30px;height:30px" class="pe-2">ကျောင်းသားရေးရာဌာန -	၀၅၃-၂၈၆၃၉
+          </h5>
         </div>
+        <div class="col-md-6 pt-4">
+           <h5>
+            <img src="img/settings.png" alt="" style="width:30px;height:30px" class="pe-2">တည်နေရာ -	ပြည်မြို့၊ ပဲခူးတိုင်း
+          </h5>
+          <h5>
+            <img src="img/message.png" alt="" style="width:30px;height:30px" class="pe-2">Email -	ucspyayoffice@gmail.com
+          </h5>
+            <h5>
+              <img src="img/www.png" alt="" style="width:30px;height:30px" class="pe-2">Website - 
+              <a href="https://lms.ucspyay.edu.mm" class="text-white">lms.ucspyay.edu</a>
+            </h5>
+        </div>
+    
       </div>
     </div>
   </footer>

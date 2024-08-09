@@ -3,12 +3,12 @@
  <x-navbar>
   <div class="d-flex">
     <img src="/img/candidate.png" alt="" style="width:40px;height:40px" class="mt-2">
-        <h1 class="ms-2">Student Lists</h1>
+        <h3 class="ms-2 mt-2">ကျောင်းအပ်ထားသော ကျောင်းသားများ</h3>
         <span class="m-3 justify-content-end">
         <form action="/search" method="GET">
           <div class="d-flex">
            <input type="text"  class="form-control me-2" name="search" placeholder="search..." value="{{isset($search) ? $search : ''}}">
-            <button type="submit" class="btn btn-primary animate__animated animate__flash me-2">Search</button>
+            <button type="submit" class="btn btn-primary animate__animated animate__flash me-2">search</button>
           </div>
       </span>
     </div>
@@ -28,6 +28,7 @@
             <th scope="col">ဖုန်းနံပါတ်</th>
             <th scope="col">လက်ရှိနေထိုင်ရာ နေရာ</th>
             <th scope="col">ဓာတ်ပုံ</th>
+            <th scope="col"></th>
           </tr>
         </thead>
       
@@ -47,18 +48,14 @@
             <td>{{$student->phone}}</td>
             <td>{{$student->address}}</td>
             <td><img src="/storage/{{$student->thumbnail}}" alt="" style="width:50px;height:50px"></td>
+            <td> <a href="/staff/enrollStudents" class="btn btn-primary">လက်ခံမည်</a></td>
           </a>
           </tr>
-          {{-- <tr>{{$student->years->year_id}}</tr>
-          <tr>{{$student->subjects->subject_id}}</tr> --}}
-          {{-- <tr>{{$student->}}</tr>
-          <tr>{{$student->motherName}}</tr>
-          <tr>{{$student->nrc}}</tr>
-          <tr>{{$student->fatherNrc}}</tr>
-          <tr>{{$student->motherNrc}}</tr> --}}
+
           @endforeach
+         
         </tbody>
-       
+      
       </table>
     </form>
     </x-navbar>
