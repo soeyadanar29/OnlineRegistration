@@ -53,6 +53,12 @@ class StudentController extends Controller
                 'notice' => $notice,
             ]);
     }
+    public function showPassedExam(Student $student) {
+        return view('auth.passed-exam',[
+            'student'=>$student
+        ]);
+
+    }
 }
 
    

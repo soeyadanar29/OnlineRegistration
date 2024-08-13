@@ -1,9 +1,5 @@
 <x-layout>
-   
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5 mx-auto">
-                <div class="card p-4 my-3 shadow-sm " style="background-color: #90E0EF" >
+<x-card-wrapper>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="flexRadioDefault" 
                         id="flexRadioDefault1" value="student" onclick="showLoginForm()">
@@ -96,10 +92,7 @@
                         >Submit</button>
                     </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
+</x-card-wrapper>
     <script>
         function showLoginForm() {
             var studentForm = document.getElementById('studentLoginForm');

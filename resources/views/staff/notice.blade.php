@@ -11,7 +11,7 @@
                 <div class="row">
                   <div class="col-md-9 mx-auto">
                     <div class="card p-4 my-3 shadow-sm">
-                        <h5 class="text-primary text-center lh-lg">
+                        <h5 class="text-secondary text-center lh-lg">
                             <img src="/img/logo_processed.jpg" alt="" style="width:50px;height:50px;" class="me-2">
                             ပြည်ထောင်စုသမ္မတ မြန်မာနိုင်ငံတော်အစိုးရ<br>
                             သိပ္ပံနှင့် နည်းပညာဝန်ကြီးဌာန<br>
@@ -48,7 +48,7 @@
                     <x-error name="sign"/>
                     </div>
                     
-                    <button type="submit" class="btn btn-info mt-2">Submit</button>
+                    <button type="submit" class="btn btn-info mt-2">တင်မည်</button>
                     </div>
                 </div>
             </div>

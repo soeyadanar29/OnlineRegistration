@@ -1,14 +1,11 @@
 
 <x-layout>
   @if (session('success'))
-  <div class="alert alert-success justify-content-center">
+  <div class="alert alert-success text-center">
       {{ session('success') }}
   </div>
 @endif
-  <div class="container">
-    <div class="row">
-      <div class="col-md-9 mx-auto">
-        <div class="card p-4 my-3 shadow-sm" style="background-color: #90E0EF">
+  <x-card-wrapper>
           <h3 class="text-primary text-center">
             <img src="/img/logo_processed.jpg" alt="" style="width:50px;height:50px;" class="me-2">University of Computer Studies Pyay</h3>
           <h5 class="text-primary text-center my-2">Online Registration</h5>
@@ -40,11 +37,11 @@
           </div>
 
           <div class="mb-3 col-sm-3">
-             <label for="subject_id" class="form-label">Subjects</label>
-            <select class="form-select" id="subject" name="subject_id" class="primary">
-              @foreach($subjects as $sub)
-              <option value="{{ $sub->id }}">
-               {{ $sub->subject }}
+             <label for="major_id" class="form-label">Major</label>
+            <select class="form-select" id="major_id" name="major_id" class="primary">
+              @foreach($majors as $maj)
+              <option value="{{ $maj->id }}">
+               {{ $maj->major }}
               </option>
               @endforeach 
             </select>
@@ -274,6 +271,29 @@
             <textarea name="motherJob" id="motherJob" col="10" row="30" placeholder="motherJob"></textarea>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-md-8">
+            <div id="exam-container">
+              <span>ဖြေဆိုခဲ့သည့် စာမေးပွဲများ</span>
+              <div class="exam-group my-3">
+                <input type="text" name="exams[0][exam_type]" placeholder="Exam Type" class="form-control">
+                <input type="text" name="exams[0][exam_roll_no]" placeholder="Exam Roll No" class="form-control my-2">
+                <input type="text" name="exams[0][major]" placeholder="Major" class="form-control my-2">
+                <input type="number" name="exams[0][passed_year]" placeholder="Passed Year" class="form-control my-2">
+                <select name="exams[0][status]" aria-placeholder="pass/fail" class="form-select">
+                  <option value="pass">Pass</option>
+                  <option value="fail">Fail</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+          
+            <button type="button" id="add-exam" class="btn btn-primary w-auto my-2 ms-2">Add Another Exam</button>
+            {{-- <button type="submit">Save Exams</button> --}}
+     
    
             <div class="row">
               <span>ကျောင်းနေရန် အထောက်အပံ့ပြုမည့် ပုဂ္ဂိုလ်</span>
@@ -298,25 +318,53 @@
                 <input type="text" class="form-control"  name="Pphone" value="{{old('Pphone')}}">
               </div>
             </div>
-            
+          <div class="row">
             <div class="mb-3 col-sm-4">
               <label for="permission" class="form-label">ပညာသင်ထောက်ပံ့ကြေးပေးရန် မေတ္တာရပ်ခံခြင်း ပြု/မပြု</label>
               <input type="text" class="form-control"  name="permission" value="{{old('permission')}}">
             </div> 
-
-            {{-- <div class="mb-3 col-sm-4">
+          </div>
+        
+{{-- 
+            <div class="mb-3 col-sm-4">
               <label for="password" class="form-label">Password</label>
               <input type="password" class="form-control"  name="password" value="{{old('password')}}">
             </div>  --}}
-            <a href="/register/next" class="btn btn-primary text-decornation-none">
-              Next to add the necessary file</a>
-            {{-- <button type="submit" class="btn btn-primary">Submit</button> --}}
-          </form>
-
-        </div>
-      </div>
-    </div>
-  </div> 
+            {{-- <div class="row">
+              <div class="mb-3 col-sm-4">
+               <button type="submit" class="btn btn-primary w-10 h-10">Submit</button>
+              </div> --}}
+             
+              {{-- <div class="mb-3 col-sm-5">
+                <a href="/register/file" class="btn btn-primary text-decornation-none">
+                Next to add the necessary file</a>
+              </div> --}}
+              <div class="row">
+              <span class="text-start">ရပ်ကွက်ထောက်ခံစာ</span>
+              <x-form.input type="file" id="wardPermission" name="wardPermission"/>
+              <span class="text-start">ရဲစခန်းထောက်ခံစာ</span>
+              <x-form.input type="file" id="policePermission" name="policePermission"/>
+              <span class="text-start">အမှတ်စာရင်း</span>
+              <x-form.input type="file" id="totalmarks" name="totalMarks"/>
+              <span class="text-start">အိမ်ထောင်စုစာရင်း</span>
+              <x-form.input type="file" id="familyFile" name="familyFile"/>
+              <span class="text-start">ဆယ်တန်းအောင်လက်မှတ်</span>
+              <x-form.input type="file" id="certificate" name="certificate"/>
+              <span class="text-start">မှတ်ပုံတင်</span>
+              <x-form.input type="file" id="nrcFile" name="nrcFile"/>
+              <span class="text-start">အဘ မှတ်ပုံတင်</span>
+              <x-form.input type="file" id="fatherNrcFile" name="fatherNrcFile"/>
+              <span class="text-start">အမိ မှတ်ပုံတင်</span>
+              <x-form.input type="file" id="motherNrcFile" name="motherNrcFile"/>
+              <span class="text-start">ကိုဗစ်ဆေး ထောက်ခံစာ</span>
+              <x-form.input type="file" id="covid" name="covid"/>
+            
+            </div>
+            <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+  </x-card-wrapper>
   <script>
     function previewImage(event) {
       const input = event.target;
@@ -332,5 +380,18 @@
         reader.readAsDataURL(input.files[0]);
       }
     }
+
+    // Passed Exam show
+        let examIndex = 1;
+      document.getElementById('add-exam').addEventListener('click', function() {
+        let newExam = document.querySelector('.exam-group').cloneNode(true);
+        newExam.querySelectorAll('input, select').forEach(input => {
+            input.name = input.name.replace(/\d+/, examIndex);
+            input.value = '';
+        });
+        document.getElementById('exam-container').appendChild(newExam);
+        examIndex++;
+      });
+      
   </script>
  </x-layout> 

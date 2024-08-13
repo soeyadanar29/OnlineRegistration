@@ -23,9 +23,9 @@ class Student extends Authenticatable
         return $this->belongsTo(Year::class);
     }
     
-    public function subject()
+    public function major()
     {
-        return $this->belongsTo(Subject::class);
+        return $this->belongsTo(Major::class);
     }
     public function user()
     {
@@ -35,6 +35,10 @@ class Student extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+    public function file(){
+
+        return $this->hasMany(studentFile::class);
     }
     
 }

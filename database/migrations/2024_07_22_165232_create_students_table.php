@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->foreignId('year_id');
-            $table->foreignId('subject_id');
+            $table->foreignId('major_id');
             $table->foreignId('user_id')->default(1);
             $table->string('rollno')->unique();
             $table->integer('entrance_year');
@@ -59,6 +59,8 @@ return new class extends Migration
             $table->string('fatherJob');
             $table->string('motherJob');
 
+            $table->json('exams');
+
             $table->string('PName');
             $table->string('relation');
             $table->string('PJob');
@@ -67,6 +69,17 @@ return new class extends Migration
 
             $table->string('permission');
             $table->string('thumbnail');
+
+            $table->string('wardPermission');
+            $table->string('policePermission');
+            $table->string('marks');
+            $table->string('familyFile');
+            $table->string('certification');
+            $table->string('nrcFile');
+            $table->string('fatherNrcFile');
+            $table->string('motherNrcFile');
+            $table->string('covid_permission');
+
             $table->timestamps();
         });
     }

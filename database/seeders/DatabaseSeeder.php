@@ -5,9 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Year;
+use App\Models\Major;
 use App\Models\Nation;
-use App\Models\Subject;
-use App\Models\learningSubject;
+use App\Models\Semester;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,9 +24,10 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         Year::truncate();
-        Subject::truncate();
+        Major::truncate();
         User::truncate();
         Nation::truncate();
+        Semester::truncate();
        
         Year::create([
             'year'=>'First Year',
@@ -48,16 +49,16 @@ class DatabaseSeeder extends Seeder
             'year'=>'Final Year',
             'slug'=>'final-year'
         ]);
-        Subject::create([
-            'subject'=>'none',
+        Major::create([
+            'major'=>'none',
             'slug'=>'none'
         ]);
-        Subject::create([
-            'subject'=>'Computer Science',
+        Major::create([
+            'major'=>'Computer Science',
             'slug'=>'computer-science'
         ]);
-        Subject::create([
-            'subject'=>'Computer Technology',
+        Major::create([
+            'major'=>'Computer Technology',
             'slug'=>'computer-technology'
         ]);
         User::create([
@@ -69,6 +70,14 @@ class DatabaseSeeder extends Seeder
          ]);
          Nation::create([
             'type'=>'foreign',
+         ]);
+         Semester::create([
+            'semester'=>'first',
+            'slug'=>'first-semester'
+         ]);
+         Semester::create([
+            'semester'=>'second',
+            'slug'=>'second-semester'
          ]);
        
     }

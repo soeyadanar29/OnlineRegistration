@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('student_files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('student_id');
+            $table->foreignId('studentId');
             $table->string('wardPermission');
             $table->string('policePermission');
             $table->string('marks');
             $table->string('familyFile');
-            $table->string('certification');
-            $table->string('nrc');
-            $table->string('fatherNrc');
-            $table->string('motherNrc');
-            $table->string('covid_permission');
+            $table->string('certificate');
+            $table->string('nrcFile');
+            $table->string('fatherNrcFile');
+            $table->string('motherNrcFile');
+            $table->string('covid');
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('student_files');
     }
 };

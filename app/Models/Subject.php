@@ -8,9 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Subject extends Model
 {
     use HasFactory;
-    
-    public function student()
-    {
-        return $this->belongsTo(Student::class);
+    protected $fillable = [
+        'year_id','major_id','semester_id','subjectName','subjectCode'
+    ];
+    public function year(){
+        return $this->belongsTo(Year::class);
+    }
+    public function major(){
+        return $this->belongsTo(Major::class);
+    }
+    public function semester(){
+        return $this->belongsTo(Semester::class);
     }
 }

@@ -1,8 +1,9 @@
 
 <x-layout>
  <x-navbar>
+
   <div class="d-flex">
-    <img src="/img/candidate.png" alt="" style="width:40px;height:40px" class="mt-2">
+    <img src="/img/check.png" alt="" style="width:40px;height:40px" class="ms-2 mt-2">
         <h3 class="ms-2 mt-2">ကျောင်းအပ်ထားသော ကျောင်းသားများ</h3>
         <span class="m-3 justify-content-end">
         <form action="/search" method="GET">
@@ -12,7 +13,7 @@
           </div>
       </span>
     </div>
-      <table class="table table-info table-hover">
+      <table class="table table-info table-hover table-bordered">
         <thead>
           <tr>
             <th scope="col">သင်တန်းနှစ်</th>
@@ -21,12 +22,6 @@
             <th scope="col">ကျောင်းသား/သူ အမည်</th>
             <th scope="col">အဘ အမည်</th>
             <th scope="col">အမိ အမည်</th>
-            <th scope="col">မှတ်ပုံတင်အမှတ်</th>
-            <th scope="col">အဘမှတ်ပုံတင်အမှတ်</th>
-            <th scope="col">အမိမှတ်ပုံတင်အမှတ်</th>
-            <th scope="col">မွေးသက္ကရာဇ်</th>
-            <th scope="col">ဖုန်းနံပါတ်</th>
-            <th scope="col">လက်ရှိနေထိုင်ရာ နေရာ</th>
             <th scope="col">ဓာတ်ပုံ</th>
             <th scope="col"></th>
           </tr>
@@ -36,17 +31,11 @@
           @foreach ($students as $student)
           <tr><a href="">
             <th scope="row">{{$student->year->year}}</th>
-            <td>{{$student->subject->subject}}</td>
+            <td>{{$student->major->major}}</td>
             <td>{{$student->rollno}}</td>
-            <td>{{$student->name}}</td>
-            <td>{{$student->fatherName}}</td>
-            <td>{{$student->motherName}}</td>
-            <td>{{$student->nrc}}</td>
-            <td>{{$student->fatherNrc}}</td>
-            <td>{{$student->motherNrc}}</td>
-            <td>{{$student->birth_date}}</td>
-            <td>{{$student->phone}}</td>
-            <td>{{$student->address}}</td>
+            <td>{{$student->nameMyan}}</td>
+            <td>{{$student->fatherNameMyan}}</td>
+            <td>{{$student->motherNameMyan}}</td>
             <td><img src="/storage/{{$student->thumbnail}}" alt="" style="width:50px;height:50px"></td>
             <td> <a href="/staff/enrollStudents" class="btn btn-primary">လက်ခံမည်</a></td>
           </a>
